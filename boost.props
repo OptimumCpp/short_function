@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <BoostVersion>1_78_0</BoostVersion>
+    <BoostRoot>$(VisualStudioDir)\Library\boost_$(BoostVersion)</BoostRoot>
+    <BoostLibraries>$(BoostRoot)\stage\lib</BoostLibraries>
+  </PropertyGroup>
+  <ItemGroup>
+    <BuildMacro Include="BoostVersion">
+      <Value>$(BoostVersion)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="BoostRoot">
+      <Value>$(BoostRoot)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="BoostLibraries">
+      <Value>$(BoostLibraries)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(BoostRoot);</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(BoostLibraries);</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+</Project>
